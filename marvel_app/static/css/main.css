@@ -1,0 +1,49 @@
+.logo{
+    color: white;
+}
+
+#my_gif{
+    margin-top: 7vh;
+}
+
+#middle-text{
+    text-align: center;
+}
+
+#grid{
+    margin-top: 5vh;
+}
+
+#top_row, #bottom_row{
+    margin: auto;
+    text-align: center;
+    margin-top: 3vh;
+}
+
+#bottom_row{
+    margin-top: 3vh;
+}
+
+footer{
+    padding: 2vw 0;
+    text-align: center;
+    background-color: red;
+    color: black;
+    margin-top: 5vh;
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+footer li{
+    display: inline;
+    text-decoration: none;
+    padding: .5vw;
+}
