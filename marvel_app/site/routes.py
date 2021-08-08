@@ -12,8 +12,8 @@ def home():
 
 @site.route('/profile')
 @login_required
-def profile(current_user_token):
-    owner = current_user_token.token
+def profile():
+    owner = current_user.token
     characters = Character.query.filter_by(user_token = owner).all()
     return render_template('profile.html', characters = characters)
 
