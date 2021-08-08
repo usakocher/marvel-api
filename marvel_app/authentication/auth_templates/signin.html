@@ -1,5 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Sign In</h1>
+<div class="container" id="reg_form">
+    {% with messages = get_flashed_messages(with_categories = True) %}
+        {% if messages %}
+            {% for cat,msg in messages %}
+                {% if cat == 'user_created' %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% elif cat == 'auth_failed' %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% elif cat == 'logout_success' %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% include 'auth_login.html' %}
+</div>
+
 {% endblock content %}

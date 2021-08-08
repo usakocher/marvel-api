@@ -5,27 +5,41 @@
     <iframe src="https://gifer.com/embed/WMtk" width="100%" height="100%" style='position:absolute;top:0;left:0;' frameBorder="0" allowFullScreen>
     </iframe>
 </div>
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = True) %}
+        {% if messages %}
+            {% for cat,msg in messages %}
+                {% if cat == 'auth_success' %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
 <div class="container" id="middle-text">
     <div class="row pt-3">
-        <h2>Collect Your Favorite Characters form the MCU!</h2>
+        <h2>Collect Your Favorite Characters from the MCU!</h2>
         <p>With our custom database, you can share your collection with other Marvel fans around the world</p>
     </div>
 </div>
 <section>
     <div class="container" id="grid">
         <div class="row" id="top_row">
-            <div class="col-12 col-md-4 offset-md-2">
+            <div class="col-12 col-md-4 offset-md-1" id="box">
                 <h2>Upload your collection!</h2>
             </div>
-            <div class="col-12 col-md-4 offset-md-2 pt-4 pt-md-0">
+            <div class="col-12 col-md-4 pt-4 pt-md-0 offset-md-2" id="box">
                 <h2>Compare with people around the world!</h2>
             </div>
         </div>
         <div class="row" id="bottom_row">
-            <div class="col-12 col-md-4 offset-md-2">
+            <div class="col-12 col-md-4 offset-md-1" id="box">
                 <h2>We have a Hulk!</h2>
             </div>
-            <div class="col-12 col-md-4 offset-md-2 pt-4 pt-md-0">
+            <div class="col-12 col-md-4 pt-4 pt-md-0 offset-md-2" id="box">
                 <h2>We also have an API</h2>
             </div>
         </div>

@@ -1,5 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>profile</h1>
+    <div class="container" id="account_page">
+        <h2>Welcome to your profile page!!</h2>
+        <h3>Here are {{ current_user.username }}'s details:</h3>
+        <ul class="list-group">
+            <li class="list-group-item">
+                Email: {{ current_user.email }}
+            </li>
+            <li class="list-group-item">
+                Token: {{ current_user.token }}
+            </li>
+        </ul>
+        {% for post in posts %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ character.name }}</h5>
+                    <h6 class="card-subtitle mb-2">By: {{ current_user.username }}</h6>
+                    <p class="card-text">{{ character.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock content %}
