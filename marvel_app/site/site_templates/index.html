@@ -49,10 +49,15 @@
     <div class="row">
         <ul>
             <li><a href="{{ url_for('site.home') }}">Home</a></li>
-            <li><a href="">Characters</a></li>
-            <li><a href="{{ url_for('site.profile')}}">Account</a></li>
-            <li><a href="{{ url_for('auth.signin')}}">Sign In</a></li>
-            <li><a href="{{ url_for('auth.signup')}}">Sign Up Today</a></li>
+            {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('site.profile')}}">Account</a></li>
+                <li><a href="{{ url_for('site.create')}}">Upload</a></li>
+                <li><a href="{{ url_for('auth.logout')}}">Logout</a></li>    
+            {% else %}
+                <li><a href="{{ url_for('auth.signin')}}">Sign In</a></li>
+                <li><a href="{{ url_for('auth.signup')}}">Sign Up Today</a></li>
+            {% endif %}
+            
             <li><a href="">Contact Us</a></li>
         </ul>
     </div>
