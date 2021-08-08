@@ -1,0 +1,40 @@
+<form method = 'POST'>
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset>
+            {{ form.name.label }}
+            {{ form.name(class = "form-control", placeholder = "Enter Character Name") }}
+        </fieldset>
+        <fieldset>
+            {{  form.description.label }}
+            {{ form.description(class = "form-control", placeholder = "Enter a brief description of the character") }}
+        </fieldset>
+        <fieldset>
+            {{  form.movies.label }}
+            {{ form.movies(class = "form-control", placeholder = "List the movies character is featured in...") }}
+        </fieldset>
+        <fieldset>
+            {{  form.events.label }}
+            {{ form.events(class = "form-control", placeholder = "eg.. Ragnarok, Infinity War, The Blip") }}
+        </fieldset>
+        <fieldset>
+            {{  form.series.label }}
+            {{ form.series(class = "form-control", placeholder = "eg.. Infinity Saga, Netflix Show") }}
+        </fieldset>
+        <fieldset>
+            {{  form.powers.label }}
+            {{ form.powers(class = "form-control", placeholder = "Enter a brief list of powers...") }}
+        </fieldset>
+        <fieldset>
+            {% for subfield in form.radio %}
+                <div class="subfield">
+                    {{ subfield }}
+                    {{ subfield.label }}
+                </div>
+            {% endfor %}
+        </fieldset>
+        <div id="sub_butt">
+            {{ form.submit_button(class = "btn btn-danger") }}
+        </div>
+    </div>
+</form>

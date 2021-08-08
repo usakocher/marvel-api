@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from wtforms.fields.simple import PasswordField
 from marvel_app.forms import UserSignUpForm, UserLoginForm
 from marvel_app.models import User, db, check_password_hash
 from flask_login import login_user, logout_user, login_required

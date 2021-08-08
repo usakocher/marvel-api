@@ -12,8 +12,8 @@
                 Token: {{ current_user.token }}
             </li>
         </ul>
-        {% for post in posts %}
-            <div class="card" style="width: 18rem;">
+        {% for character in characters %}
+            <div class="card mt-3" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">{{ character.name }}</h5>
                     <h6 class="card-subtitle mb-2">By: {{ current_user.username }}</h6>
