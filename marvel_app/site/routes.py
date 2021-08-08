@@ -12,8 +12,9 @@ def home():
 
 @site.route('/profile')
 @login_required
-def profile():
-    characters = Character.query.all()
+def profile(current_user_token):
+    owner = current_user_token.token
+    characters = Character.query.filter_by(user_token = owner).all()
     return render_template('profile.html', characters = characters)
 
 @site.route('/create', methods = ['GET', 'POST'])

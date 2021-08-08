@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if current_user.is_authenticated %}
     <div class="container" id="account_page">
         <h2>Welcome to your profile page!!</h2>
         <h3>Here are {{ current_user.username }}'s details:</h3>
@@ -22,4 +23,5 @@
             </div>
         {% endfor %}
     </div>
+{% endif %}
 {% endblock content %}
